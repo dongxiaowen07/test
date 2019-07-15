@@ -1,11 +1,12 @@
 #!/usr/bin/env python
-#coding=utf-8
+# coding=utf-8
+
 
 class Stack:
     def __init__(self):
         self.values = []
-    
-    def push(self, value):       
+
+    def push(self, value):
         self.values.append(value)
 
     def pop(self):
@@ -18,4 +19,6 @@ class Stack:
         return len(self.values)
 
     def peak(self):
-        return self.values[self.size()-1]
+        return self.values[self.size() - 1]
+
+
