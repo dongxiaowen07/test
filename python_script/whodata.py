@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+from os import popen
+from re import split
+
+f = popen('who', 'r')
+for eachLine in f:
+    print split('\s\s+|\t', eachLine)
+f.close()
