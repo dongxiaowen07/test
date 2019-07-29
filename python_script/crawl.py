@@ -21,7 +21,7 @@ class Retriever(object):
         parsedurl = urlparse(url, 'http:', 0)
         path = parsedurl[1] + parsedurl[2]
         ext = splitext(path)
-        doms = ['.com','.cn','.org','.net']
+        doms = ['.com', '.cn', '.org', '.net']
         if ext[1] == '' or ext[1] in doms:
             if path[-1] == '/':
                 path += deffile
