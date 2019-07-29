@@ -18,23 +18,20 @@ class Retriever(object):
         self.file = self.filename(url)
 
     def filename(self, url, deffile='index.htm'):
-        print 'url: ', url
         parsedurl = urlparse(url, 'http:', 0)
         path = parsedurl[1] + parsedurl[2]
         ext = splitext(path)
-        print ext
         if ext[1] == '':
             if path[-1] == '/':
                 path += deffile
             else:
                 path += '/' + deffile
         ldir = dirname(path)
-        print 'ldir1:', ldir
         if sep != '/':
             ldir = replace(ldir, '/', sep)
         if not isdir(ldir):
-            if exists(ldir): unlink(ldir)
-            print 'ldir: ', ldir
+            if exists(ldir):
+                unlink(ldir)
             makedirs(ldir)
         return path
 
@@ -63,7 +60,6 @@ class Crawler(object):
         self.dom = urlparse(url)[1]
 
     def getPage(self, url):
-        print 'getpage url: ', url
         r = Retriever(url)
         retval = r.download()
         if retval[0][0] == '*':
@@ -79,7 +75,7 @@ class Crawler(object):
         for eachLine in links:
             if eachLine[:4] != 'http' and find(eachLine, '://') == -1:
                 eachLine = urljoin(url, eachLine)
-            print "* ", eachLine
+            print '* ', eachLine
 
             if find(lower(eachLine), 'mailto:') != -1:
                 print '... discarded, mailto link'
@@ -114,9 +110,9 @@ def main():
 
     if not url:
         return
-    print 'url: ', url
     robot = Crawler(url)
     robot.go()
+
 
 if __name__ == '__main__':
     main()
