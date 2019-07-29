@@ -31,6 +31,7 @@ class Retriever(object):
             ldir = replace(ldir, '/', sep)
         if not isdir(ldir):
             if exists(ldir): unlink(ldir)
+            print 'ldir: ', ldir
             makedirs(ldir)
         return path
 
