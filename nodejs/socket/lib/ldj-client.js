@@ -11,7 +11,6 @@ class LDJClient extends EventEmitter {
                 const input = buffer.substring(0, boundary);
                 buffer = buffer.substring(boundary + 1);
                 this.emit('message', JSON.parse(input));
-                this.emit()
                 boundary = buffer.indexOf('\n');
             }
         });
