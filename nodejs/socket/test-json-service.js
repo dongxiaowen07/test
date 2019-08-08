@@ -8,7 +8,7 @@ const server = require('net').createServer(connection => {
 
     const timer = setTimeout(() => {
         connection.write(secondChunk);
-        connection.end();
+        //connection.end();
     }, 100);
 
     connection.on('end', () => {
