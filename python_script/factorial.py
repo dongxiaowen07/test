@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 def fact(x):
     if x == 1:
@@ -6,4 +6,5 @@ def fact(x):
     else:
         return x * fact(x-1)
 
+print fact(5)
 

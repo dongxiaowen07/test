@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 def findSmallest(arr):
     smallest = arr[0]

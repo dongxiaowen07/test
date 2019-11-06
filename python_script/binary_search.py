@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #coding=utf-8
 
 def binarySearch(list, item):
@@ -6,6 +6,22 @@ def binarySearch(list, item):
     high = len(list) - 1
     while(low <= high):
         mid = (low + high) / 2 
+        guess = list[mid]
+        if guess == item:
+            return mid
+        elif guess < item:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return None
+
+def binary_search(list, item):
+    low = 0
+    high = len(list) - 1
+
+    while(low <= high):
+        mid = (low + high) / 2
         guess = list[mid]
         if guess == item:
             return mid
