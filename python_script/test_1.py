@@ -1,5 +1,5 @@
-#!/usr/local/bin/python2.7
+#!/usr/bin/env python3
 
-print "Hello, World!"
-#print("Hello, World!")
-print "My name is Andy."
+#print "Hello, World!"
+print("Hello, World!")
+#print "My name is Andy."
