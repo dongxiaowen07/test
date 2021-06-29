@@ -143,11 +143,18 @@ class Solution:
         prev.next = l1 if l1 is not None else l2
 
         return prehead.next
+    
+    # 最大回文串 贪心
+    def longestPalindrome(self, s: str) -> int:
+        ans = 0
+        counter_map = collections.Counter(s)
+        for v in counter_map.values():
+            ans += v // 2 * 2
+            if ans % 2 == 0 and v % 2 == 1:
+                ans += 1
+        return ans
 
-
-
-
-
+    
 
 if __name__ == '__main__':
     mysolution = Solution()
