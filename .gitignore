@@ -2,5 +2,5 @@
 *.swp
 log/
 data/
-.vscode
-python_script/.idea/
+.vscode/
+.idea/
