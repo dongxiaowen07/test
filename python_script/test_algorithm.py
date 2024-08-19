@@ -11,11 +11,24 @@ class ListNode:
 class Solution:
     # 两数之和 哈希表
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        在数组中找到两个数，使得它们的和等于一个特定目标数，并返回它们的数组下标。
+
+        参数：
+        nums：一个整数列表，表示输入的数组。
+        target：一个整数，表示目标和。
+
+        返回值：
+        一个整数列表，包含两个整数，它们是数组中两个数的下标，使得它们的和等于目标和。
+        如果没有找到满足条件的两个数，则返回空列表。
+        """
         # n = len(nums)
         # for i in range(n):
         #     for j in range(i+1, n):
         #         if nums[i] + nums[j] == target:
         #             return [i, j]
+
+        # 使用字典存储数组元素及其索引，以加快查找速度
         map = dict()
         for i, item in enumerate(nums):
             if target - item in map:
@@ -23,6 +36,7 @@ class Solution:
             else:
                 map[item] = i
         return []
+
     # 无重复字符的最长子串 滑动窗口
 
     def lengthOfLongestSubstring(self, s: str) -> int:
